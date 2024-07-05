@@ -4,8 +4,8 @@ import streamlit as st
 from PIL import Image
 import google.generativeai as genai
 
-api_key = st.secrets["GOOGLE_API_KEY"]
-genai.configure(api_key=api_key)
+
+genai.configure(api_key="AIzaSyCHUtiU3CCllD7pDurR-0N3Tqv-TpogwsU")
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 st.markdown(
@@ -78,11 +78,12 @@ persona = """
         Murtaza's Github :https://github.com/murtazahassan
         """
 
-st.title("Sanath's Ai Bot")
-user_question = st.text_input("Ask me anything")
+st.title("Sanath's AI Bot")
+
+user_question = st.text_input("Ask anything about me")
 if st.button("ASK", use_container_width=400):
     prompt = persona + "Here is the question that the user asked: " + user_question
-    response = model.generate_content(user_question)
+    response = model.generate_content(prompt)
     st.write(response.text)
 
 st.title(" ")
