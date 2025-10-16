@@ -190,7 +190,7 @@ for i, image_path in enumerate(images):
 
     # Display image in the appropriate column
     col = cols[i % 3]
-    col.image(image, use_column_width=True)
+    col.image(image, use_container_width =True)
 
 
 
@@ -219,3 +219,4 @@ with cols[2]:
     st.markdown(
         f'<a href="{github_url}" target="_blank"><img src="data:image/png;base64,{github_base64}" width="50"></a>',
         unsafe_allow_html=True)
+
